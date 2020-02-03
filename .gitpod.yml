@@ -1,0 +1,7 @@
+tasks:
+  - command: rsyslogd -f /etc/rsyslog.conf -i ~/rsyslog/pid && logger --socket /home/gitpod/rsyslog/dev/log "Hello world"
+  - command: tail -F /home/gitpod/rsyslog/log/syslog 2>/dev/null
+    name: "Syslog"
+    openMode: split-right
+image:
+  file: .gitpod.Dockerfile
